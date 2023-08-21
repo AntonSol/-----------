@@ -8,14 +8,31 @@
 </head>
 <body>
     <script> 
-function tailSwap(arr) {
-let a=arr[0].split(':')[0]
-let b=arr[0].split(':')[1]
-let c=arr[1].split(':')[0]
-let d=arr[1].split(':')[1]
-console.log([a+':'+d, c+':'+b])  
+function solve(arr) {
+  const positiveSet = new Set();
+  const negativeSet = new Set();
+
+  for (let num of arr) {
+    if (num > 0) {
+      positiveSet.add(num);
+    } else if (num < 0) {
+      negativeSet.add(num);
+    }
+  }
+
+  for (let num of positiveSet) {
+    if (!negativeSet.has(-num)) {
+      return num;
+    }
+  }
+
+  for (let num of negativeSet) {
+    if (!positiveSet.has(-num)) {
+      return num;
+    }
+  }
 }
-  tailSwap(['abc:123','cde:456'])
+
   </script>
 </body>
 </html>

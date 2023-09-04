@@ -1,0 +1,14 @@
+var capitals = function (word) {
+  let result=[]
+  let wordCopi=word.toUpperCase()
+  
+  for (let k=0;k<word.length;k++) {
+        if (word[k] === wordCopi[k]) {
+          result.push(k)}
+      }
+    
+  
+   
+  return result
+  
+  };

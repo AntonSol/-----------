@@ -9,6 +9,6 @@ var capitals = function (word) {
     
   
    
-  return result
+  return result;
   
   };
